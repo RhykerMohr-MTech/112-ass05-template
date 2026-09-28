@@ -144,8 +144,6 @@ int linear_search(int arr[], int n, int target)
 }
     return -1;
 }
-
-
 /*
  * ============================================================================
  * FUNCTION: heron
@@ -177,7 +175,7 @@ double heron(double x, double epsilon)
         }
         if(d < epsilon)
         {
-            break;
+            break; 
         }
     }
     return g;
