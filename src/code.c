@@ -1,5 +1,7 @@
-//char *AUTHOR_NAME        = (char *) "Your Name";
-//char *AUTHOR_AUTHORSHIP  = (char *) "I acknowledge that I have worked on this
+//Rhyker Mohr
+// CSCI 112 Fall 2026
+// Programming Assignment #5
+//"I acknowledge that I have worked on this
 // assignment independently, except where explicitly noted and referenced.
 // Any collaboration or use of external resources has been properly cited.
 // I am fully aware of the consequences of academic dishonesty and agree to
@@ -16,7 +18,8 @@
  * 
  * Write your function implementations below each TODO.
  */
-
+#include "code.h"
+#include <stdio.h>
 
 
 /*
@@ -29,7 +32,17 @@
  */
 int find_max(int arr[], int n)
 {
+    int a = arr[0];
     // TODO: Your implementation here
+    for (int i = 0; i < n; i++)
+    {
+        if(arr[i] > a)
+        {
+            a = arr[i];
+        }
+
+    }
+    return a;
 }
 
 /*
@@ -43,6 +56,16 @@ int find_max(int arr[], int n)
 int find_min(int arr[], int n)
 {
     // TODO: Your implementation here
+   int a = arr[0];
+    for (int i = 0; i < n; i++)
+    {
+        if(arr[i] < a)
+        {
+            a = arr[i];
+        }
+
+    }
+    return a;
 }
 
 /*
@@ -56,6 +79,16 @@ int find_min(int arr[], int n)
 long sum_array(int arr[], int n)
 {
     // TODO: Your implementation here
+    long a = 0;
+    long b = 0;
+    for (int i = 0; i < n; i++)
+    {
+        b = arr[i]; 
+        a = a + b;
+    }
+    return a;
+
+
 }
 
 /*
@@ -69,6 +102,16 @@ long sum_array(int arr[], int n)
 double average(float arr[], int n)
 {
     // TODO: Your implementation here
+    double a = 0.0;
+    double b = 0.0;
+    double d = 0.0;
+    for (int i = 0; i < n; i++)
+    {
+        b = arr[i]; 
+        a = a + b;
+    }
+    d = a / n;
+    return d;
 }
 
 /*
@@ -89,6 +132,17 @@ double average(float arr[], int n)
 int linear_search(int arr[], int n, int target)
 {
     // TODO: Your implementation here
+
+    int i = 0;
+    while (i < n)
+{
+    if( arr[i] == target )
+        return i; 
+    else 
+        i++;
+
+}
+    return -1;
 }
 
 
@@ -108,4 +162,23 @@ int linear_search(int arr[], int n, int target)
 double heron(double x, double epsilon)
 {
     // TODO: Your implementation here
+
+    double g = x / 20;
+    double pg = 0;
+    double d = 0;
+    while (1)
+    {
+        pg = g;
+        g = (g + x / g) / 2.0;
+        d = g - pg;
+        if(d < 0 ) 
+        {
+            d = -d;
+        }
+        if(d < epsilon)
+        {
+            break;
+        }
+    }
+    return g;
 }
