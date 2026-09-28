@@ -177,7 +177,7 @@ double heron(double x, double epsilon)
         }
         if(d < epsilon)
         {
-            break; 
+            break;
         }
     }
     return g;
